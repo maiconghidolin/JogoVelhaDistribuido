@@ -53,6 +53,7 @@ Partial Class Form1
         Me.btn1A.Name = "btn1A"
         Me.btn1A.Size = New System.Drawing.Size(75, 64)
         Me.btn1A.TabIndex = 0
+        Me.btn1A.Tag = "1A"
         Me.btn1A.UseVisualStyleBackColor = True
         '
         'btn2A
@@ -62,6 +63,7 @@ Partial Class Form1
         Me.btn2A.Name = "btn2A"
         Me.btn2A.Size = New System.Drawing.Size(75, 64)
         Me.btn2A.TabIndex = 1
+        Me.btn2A.Tag = "2A"
         Me.btn2A.UseVisualStyleBackColor = True
         '
         'btn3A
@@ -71,6 +73,7 @@ Partial Class Form1
         Me.btn3A.Name = "btn3A"
         Me.btn3A.Size = New System.Drawing.Size(75, 64)
         Me.btn3A.TabIndex = 2
+        Me.btn3A.Tag = "3A"
         Me.btn3A.UseVisualStyleBackColor = True
         '
         'btn1B
@@ -80,6 +83,7 @@ Partial Class Form1
         Me.btn1B.Name = "btn1B"
         Me.btn1B.Size = New System.Drawing.Size(75, 64)
         Me.btn1B.TabIndex = 5
+        Me.btn1B.Tag = "1B"
         Me.btn1B.UseVisualStyleBackColor = True
         '
         'btn2B
@@ -89,6 +93,7 @@ Partial Class Form1
         Me.btn2B.Name = "btn2B"
         Me.btn2B.Size = New System.Drawing.Size(75, 64)
         Me.btn2B.TabIndex = 4
+        Me.btn2B.Tag = "2B"
         Me.btn2B.UseVisualStyleBackColor = True
         '
         'btn3B
@@ -98,6 +103,7 @@ Partial Class Form1
         Me.btn3B.Name = "btn3B"
         Me.btn3B.Size = New System.Drawing.Size(75, 64)
         Me.btn3B.TabIndex = 3
+        Me.btn3B.Tag = "3B"
         Me.btn3B.UseVisualStyleBackColor = True
         '
         'btn1C
@@ -107,6 +113,7 @@ Partial Class Form1
         Me.btn1C.Name = "btn1C"
         Me.btn1C.Size = New System.Drawing.Size(75, 64)
         Me.btn1C.TabIndex = 8
+        Me.btn1C.Tag = "1C"
         Me.btn1C.UseVisualStyleBackColor = True
         '
         'btn2C
@@ -116,6 +123,7 @@ Partial Class Form1
         Me.btn2C.Name = "btn2C"
         Me.btn2C.Size = New System.Drawing.Size(75, 64)
         Me.btn2C.TabIndex = 7
+        Me.btn2C.Tag = "2C"
         Me.btn2C.UseVisualStyleBackColor = True
         '
         'btn3C
@@ -125,6 +133,7 @@ Partial Class Form1
         Me.btn3C.Name = "btn3C"
         Me.btn3C.Size = New System.Drawing.Size(75, 64)
         Me.btn3C.TabIndex = 6
+        Me.btn3C.Tag = "3C"
         Me.btn3C.UseVisualStyleBackColor = True
         '
         'btnConectar

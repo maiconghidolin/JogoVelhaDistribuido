@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Enumeradores.vb" />
+    <Compile Include="Models\FilaJogadores.vb" />
     <Compile Include="Models\Mensagem.vb" />
     <Compile Include="Views\EscolheJogador.Designer.vb">
       <DependentUpon>EscolheJogador.vb</DependentUpon>
