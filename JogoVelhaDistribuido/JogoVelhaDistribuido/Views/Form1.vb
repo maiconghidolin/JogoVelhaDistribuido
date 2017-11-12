@@ -19,6 +19,10 @@ Public Class Form1
 
     Private _filaJogadores As List(Of Model.FilaJogadores)
 
+#End Region
+
+#Region "Delegates"
+
     Delegate Sub SetStatusCallback([text] As String)
     Delegate Sub BotaoToggleCallback([botao] As Button, [enabled] As Boolean)
     Delegate Sub BotaoTextCallback([botao] As Button, [texto] As String)
@@ -73,10 +77,32 @@ Public Class Form1
         If Ganhou() Then
             EnviaMensagem(botao.Name, Model.Enumeradores.TipoMensagem.Ganhar, _socketAdversario.GetStream())
             SetStatus("Você ganhou!")
+            Application.DoEvents()
+            For i As Integer = 5 To 1 Step -1
+                SetStatus("Você ganhou!" & vbCrLf & "Iniciando novo jogo em " & i)
+                Application.DoEvents()
+                Threading.Thread.Sleep(1000)
+            Next
+            LimparTabuleiro(False)
+            BotaoToggle(btnAdversario, True)
+            _jogoEmAndamento = False
+            SetStatus("")
+            Application.DoEvents()
         Else
             If Empatou() Then
                 EnviaMensagem(botao.Name, Model.Enumeradores.TipoMensagem.Empatar, _socketAdversario.GetStream())
                 SetStatus("Jogo empatado!")
+                Application.DoEvents()
+                For i As Integer = 5 To 1 Step -1
+                    SetStatus("Jogo empatado!" & vbCrLf & "Iniciando novo jogo em " & i)
+                    Application.DoEvents()
+                    Threading.Thread.Sleep(1000)
+                Next
+                LimparTabuleiro(False)
+                BotaoToggle(btnAdversario, True)
+                _jogoEmAndamento = False
+                SetStatus("")
+                Application.DoEvents()
             Else
                 EnviaMensagem(botao.Name, Model.Enumeradores.TipoMensagem.Jogada, _socketAdversario.GetStream())
                 SetStatus("Aguardando o outro jogador!")
@@ -137,7 +163,7 @@ Public Class Form1
 
     Private Sub DesbloquearBotoes()
         For Each controle In Me.Controls
-            If TypeOf controle Is Button And controle.Tag <> "" Then
+            If TypeOf controle Is Button And controle.Tag <> "" And controle.Text = "" Then
                 BotaoToggle(controle, True)
             End If
         Next
@@ -171,12 +197,28 @@ Public Class Form1
                 If mensagem.TipoMensagem = Model.Enumeradores.TipoMensagem.Ganhar Then
                     Dim botao As Button = DirectCast(Me.Controls(mensagem.Mensagem), Button)
                     BotaoText(botao, _outroJogador)
-                    SetStatus("Jogador " & _outroJogador & " ganhou!")
+                    SetStatus("Você perdeu!")
+                    For i As Integer = 5 To 1 Step -1
+                        SetStatus("Você perdeu!" & vbCrLf & "Iniciando novo jogo em " & i)
+                        Threading.Thread.Sleep(1000)
+                    Next
+                    LimparTabuleiro(False)
+                    BotaoToggle(btnAdversario, True)
+                    _jogoEmAndamento = False
+                    SetStatus("")
                 End If
                 If mensagem.TipoMensagem = Model.Enumeradores.TipoMensagem.Empatar Then
                     Dim botao As Button = DirectCast(Me.Controls(mensagem.Mensagem), Button)
                     BotaoText(botao, _outroJogador)
                     SetStatus("Jogo empatado!")
+                    For i As Integer = 5 To 1 Step -1
+                        SetStatus("Jogo empatado!" & vbCrLf & "Iniciando novo jogo em " & i)
+                        Threading.Thread.Sleep(1000)
+                    Next
+                    LimparTabuleiro(False)
+                    BotaoToggle(btnAdversario, True)
+                    _jogoEmAndamento = False
+                    SetStatus("")
                 End If
 
                 _timeStamp = Math.Max(_timeStamp, mensagem.Timestamp)
@@ -224,17 +266,19 @@ Public Class Form1
         LimparTabuleiro(True)
         enviaMensagem("", Model.Enumeradores.TipoMensagem.Convite, _socketAdversario.GetStream())
         _jogoEmAndamento = True
+        SetStatus("Sua vez!")
     End Sub
 
     Private Sub AceitaConviteJogo()
         LimparTabuleiro(False)
         _jogoEmAndamento = True
+        SetStatus("Aguardando o outro jogador!")
     End Sub
 
     Private Sub LimparTabuleiro(enabled As Boolean)
         For Each controle In Me.Controls
             If TypeOf controle Is Button And controle.Tag <> "" Then
-                controle.Text = ""
+                BotaoText(controle, "")
                 If enabled Then
                     BotaoToggle(controle, True)
                 Else

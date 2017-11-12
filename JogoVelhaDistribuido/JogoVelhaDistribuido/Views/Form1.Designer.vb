@@ -48,6 +48,7 @@ Partial Class Form1
         '
         'btn1A
         '
+        Me.btn1A.Enabled = False
         Me.btn1A.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1A.Location = New System.Drawing.Point(30, 29)
         Me.btn1A.Name = "btn1A"
@@ -58,6 +59,7 @@ Partial Class Form1
         '
         'btn2A
         '
+        Me.btn2A.Enabled = False
         Me.btn2A.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn2A.Location = New System.Drawing.Point(111, 28)
         Me.btn2A.Name = "btn2A"
@@ -68,6 +70,7 @@ Partial Class Form1
         '
         'btn3A
         '
+        Me.btn3A.Enabled = False
         Me.btn3A.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn3A.Location = New System.Drawing.Point(192, 29)
         Me.btn3A.Name = "btn3A"
@@ -78,6 +81,7 @@ Partial Class Form1
         '
         'btn1B
         '
+        Me.btn1B.Enabled = False
         Me.btn1B.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1B.Location = New System.Drawing.Point(29, 99)
         Me.btn1B.Name = "btn1B"
@@ -88,6 +92,7 @@ Partial Class Form1
         '
         'btn2B
         '
+        Me.btn2B.Enabled = False
         Me.btn2B.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn2B.Location = New System.Drawing.Point(111, 98)
         Me.btn2B.Name = "btn2B"
@@ -98,6 +103,7 @@ Partial Class Form1
         '
         'btn3B
         '
+        Me.btn3B.Enabled = False
         Me.btn3B.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn3B.Location = New System.Drawing.Point(192, 99)
         Me.btn3B.Name = "btn3B"
@@ -108,6 +114,7 @@ Partial Class Form1
         '
         'btn1C
         '
+        Me.btn1C.Enabled = False
         Me.btn1C.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1C.Location = New System.Drawing.Point(30, 169)
         Me.btn1C.Name = "btn1C"
@@ -118,6 +125,7 @@ Partial Class Form1
         '
         'btn2C
         '
+        Me.btn2C.Enabled = False
         Me.btn2C.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn2C.Location = New System.Drawing.Point(111, 168)
         Me.btn2C.Name = "btn2C"
@@ -128,6 +136,7 @@ Partial Class Form1
         '
         'btn3C
         '
+        Me.btn3C.Enabled = False
         Me.btn3C.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn3C.Location = New System.Drawing.Point(192, 169)
         Me.btn3C.Name = "btn3C"
